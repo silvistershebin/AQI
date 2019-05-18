@@ -2,25 +2,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10sp"
-    android:background="#FFFFFf"
+    android:background="#9ACEFE"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
         android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:id="@+id/image"
         android:layout_gravity="center"
         android:layout_marginTop="50sp"
-        android:src="@drawable/mitlogo"
-        />
+        android:src="@drawable/mitlogo" />
 
     <TextView
         android:layout_marginTop="40sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/mitwpu"
         android:gravity="center"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:text="MIT - WPU"
+        android:text="MIT WPU"
 
         android:textColor="#000000"/>
     <TextView
@@ -34,6 +35,7 @@
         android:text="AIR QUALITY INDEX"
         android:textColor="#9E1007"/>
 
+    <!--
     <LinearLayout
         android:layout_width="192dp"
         android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="7sp"
+            android:id="@+id/loading"
             android:text="Loading ...      "
             android:textColor="#000000"
             android:textSize="25sp" />
@@ -57,6 +60,32 @@
             android:layout_gravity="center"
             android:indeterminate="true" />
 
-    </LinearLayout>
+    </LinearLayout>-->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140sp"
+        android:text=" Know the Quality of Air you Breathe "
+        android:gravity="center"
+        android:id="@+id/know"
+        android:textSize="20sp"
+        android:textColor="#3AB36D"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/legend"
+/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="PUNE"
+        android:textSize="25sp"
+        android:layout_marginTop="50sp"/>
 
 </LinearLayout>
