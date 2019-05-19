@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.anastr.speedviewlib.ImageSpeedometer;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,6 +45,8 @@ public class TodayActivity extends AppCompatActivity {
     Date date;
     String dateString;
     Calendar cal;
+    TextView textviewtodaysdate;
+    ImageSpeedometer imageSpeedometer;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -73,6 +76,14 @@ public class TodayActivity extends AppCompatActivity {
         navigation.getMenu().getItem(0).setChecked(true);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        textviewtodaysdate = findViewById(R.id.textview_todaysdate);
+
+        //Gauge All
+        imageSpeedometer = findViewById(R.id.imageSpeedometer);
+        imageSpeedometer.setMaxSpeed(500);
+        imageSpeedometer.setMinSpeed(0);
+        imageSpeedometer.setWithTremble(false);
+
         //Find All Text Views Value
         textViewSO2 = findViewById(R.id.textview_so2);
         textViewNO2 = findViewById(R.id.textview_no2);
@@ -90,13 +101,14 @@ public class TodayActivity extends AppCompatActivity {
 
         //Write code to get today date from the android device
 
-        TodayDate = "30-01-2015";
+        //TodayDate = "30-01-2015";
 
 
         cal = Calendar.getInstance();
         date = cal.getTime();
         dateString = dateFormat.format(date);
-        Toast.makeText(TodayActivity.this, dateFormat.format(date), Toast.LENGTH_SHORT).show();
+        textviewtodaysdate.setText("Today :  "+dateString);
+        //Toast.makeText(TodayActivity.this, dateFormat.format(date), Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES,MODE_PRIVATE);
         if(sharedPreferences.getString("AQI",null)!=null){
 
@@ -214,6 +226,8 @@ public class TodayActivity extends AppCompatActivity {
                                 String Colaqi = GetColor(valaqi);
                                 textViewAQIDesp.setTextColor(Color.parseColor("#FFFFFF"));
                                 textViewAQIDesp.setBackgroundColor(Color.parseColor(Colaqi));
+
+                                imageSpeedometer.speedTo(Integer.parseInt(aqi));
 
                                 editor.commit();
                             }
