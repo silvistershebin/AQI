@@ -155,6 +155,10 @@ public class TodayActivity extends AppCompatActivity {
             String Colaqi = GetColor(valaqi);
             textViewAQIDesp.setTextColor(Color.parseColor("#FFFFFF"));
             textViewAQIDesp.setBackgroundColor(Color.parseColor(Colaqi));
+
+            imageSpeedometer.speedTo(Integer.parseInt(aqi));
+
+
         }
         //Volley Start
         if (isNetworkAvailable()) {
@@ -340,7 +344,7 @@ public class TodayActivity extends AppCompatActivity {
 
     public void showHistory(View view)
     {
-        Intent intent = new Intent(TodayActivity.this,LineGraph.class);
+        Intent intent = new Intent(TodayActivity.this,Graph.class);
         startActivity(intent);
     }
 

@@ -11,32 +11,34 @@ import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
     Handler handler;
-    TextView load,textViewmit,know;
-    ImageView image,legend;
+    TextView load,know,quote;
+    ImageView image,earth,hub;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
         load = findViewById(R.id.textview_load);
-        textViewmit = findViewById(R.id.mitwpu);
         image = findViewById(R.id.image);
         know = findViewById(R.id.know);
-        legend = findViewById(R.id.legend);
+        earth = findViewById(R.id.earth);
+        hub = findViewById(R.id.hub);
+        quote = findViewById(R.id.textquote);
 
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
         load.startAnimation(myanim);
-        textViewmit.startAnimation(myanim);
         image.startAnimation(myanim);
         know.startAnimation(myanim);
-        legend.startAnimation(myanim);
+        earth.startAnimation(myanim);
+        hub.startAnimation(myanim);
+        quote.startAnimation(myanim);
 
 
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent=new Intent(SplashActivity.this,TodayActivity.class);
                 startActivity(intent);
                 finish();
             }
