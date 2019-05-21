@@ -1,39 +1,47 @@
-<LinearLayout android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10sp"
-    android:background="#9ACEFE"
+    tools:context=".SplashActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+
+    <LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <ImageView
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
         android:id="@+id/image"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50sp"
-        android:src="@drawable/mitlogo" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/mitlogosvgwhite"
+        />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/earth"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:src="@drawable/earth"
+        />
 
     <TextView
-        android:layout_marginTop="40sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mitwpu"
-        android:gravity="center"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:text="MIT WPU"
-
-        android:textColor="#000000"/>
-    <TextView
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textview_load"
         android:gravity="center"
         android:textSize="28sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         android:text="AIR QUALITY INDEX"
-        android:textColor="#9E1007"/>
+        android:textColor="#ffffff"/>
 
     <!--
     <LinearLayout
@@ -66,26 +74,29 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140sp"
-        android:text=" Know the Quality of Air you Breathe "
+        android:text="Because Breathing Matters"
         android:gravity="center"
         android:id="@+id/know"
-        android:textSize="20sp"
-        android:textColor="#3AB36D"/>
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/legend"
-/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/hub"
         android:layout_gravity="center"
-        android:text="PUNE"
-        android:textSize="25sp"
-        android:layout_marginTop="50sp"/>
+        android:src="@drawable/ic_device_hub_black_24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:textColor="#ffffff"
+        android:id="@+id/textquote"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Real Time Air Quality \n information for MIT-WPU "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
